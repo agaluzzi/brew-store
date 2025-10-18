@@ -158,7 +158,7 @@
 </main>
 
 <footer>
-    &copy; 2025 Homebrewing Equipment Sale – Happy Brewing!
+    &copy; 2025 Happy Brewing!
 </footer>
 
 <!-- Modal -->
@@ -173,76 +173,10 @@
     // Data for all items
     const items = [
         {
-            title: "CO<sub>2</sub> Keg Flushing System",
-            description: "CO2 regulator, curly hose, and quick connects that attach to keg or air gun for flushing oxygen out of kegs",
-            price: "$25",
-            images: ["AirGun_1.jpg", "AirGun_2.jpg"]
-        },
-        {
-            title: "Airlocks",
-            description: "A handful of bubbler airlocks with accompanying caps",
-            price: "$5",
-            images: ["Airlocks.jpg"]
-        },
-        {
-            title: "Bevlex Beer Hose",
-            description: "Brand new Bevlex 200 clear PVC tubing for carrying beer from your kegs to your taps (about 50 feet) -- plus a couple lines with attached barbs and nuts",
-            price: "$15",
-            images: ["Bevlex_1.jpg", "Bevlex_2.jpg", "Bevlex_3.jpg"]
-        },
-        {
-            title: "Bottle Washer",
-            description: "Attaches to faucet for quickly cleaning bottles or carboys, made of brass",
-            price: "?",
-            images: ["BottleWasher.jpg"]
-        },
-        {
-            title: "Stainless Brew Kettle",
-            description: "Comes with lid, ball valve, and large spoon, holds about 4 gallons",
-            price: "?",
-            images: ["BrewPot_1.jpg", "BrewPot_2.jpg"]
-        },
-        {
             title: "PET Plastic Carboys",
             description: "Stop messing around with heavy, breakable glass! These lightweight fermentors are awesome. (two 6 gallon, one 5 gallon)",
             price: "$15 each",
             images: ["Carboys_1.jpg", "Carboys_2.jpg"]
-        },
-        {
-            title: "Counterflow Wort Chiller",
-            description: "Quickly cools down wort on its way to the fermentor. Hot wort travels through inner copper tube, while cold water passes in the other direction.",
-            price: "$50",
-            images: ["Chiller_1.jpg", "Chiller_2.jpg"]
-        },
-        {
-            title: "CO<sub>2</sub> Tanks",
-            description: "Aluminum tanks, empty",
-            price: "$40 (5 lb)<br/>$60 (10 lb)",
-            images: ["CO2Tanks_1.jpg", "CO2Tanks_2.jpg"]
-        },
-        {
-            title: "Keg Faucets w/ Connectors",
-            description: "Beer pouring faucets with attached tubing, barbed threaded fittings, and ball lock quick disconnects",
-            price: "$20",
-            images: ["FaucetLines.jpg"]
-        },
-        {
-            title: "2000 ml Erlenmeyer Flask",
-            description: "Heat resistant Bomex (borosilicate) glass -- great for yeast starters",
-            price: "$15",
-            images: ["Flask.jpg"]
-        },
-        {
-            title: "CO<sub>2</sub> Gas Hose",
-            description: "High-quality, thick-walled red gas hose for CO2 (~28 feet, 5/16\" ID x 9/16\" OD)",
-            price: "$10",
-            images: ["GasHose_1.jpg", "GasHose_2.jpg"]
-        },
-        {
-            title: "Various Keg Parts",
-            description: "Miscellaneous fittings and kegging parts",
-            price: "$5",
-            images: ["KegParts.jpg"]
         },
         {
             title: "5 Gallon Cornelius Kegs",
@@ -251,10 +185,136 @@
             images: ["Kegs_1.jpg", "Kegs_2.jpg", "Kegs_3.jpg"]
         },
         {
+            title: "Counterflow Wort Chiller",
+            description: "Quickly cools down wort on its way to the fermentor. Hot wort travels through inner copper tube, while cold water passes in the other direction",
+            price: "$50",
+            images: ["Chiller_1.jpg", "Chiller_2.jpg"]
+        },
+        {
+            title: "Blichmann QuickConnectors + Silicon Hose",
+            description: 'High temp silicon hose with 1/2" Blichmann QuickConnector threaded fittings (4 straight, 2 elbow) -- these are stainless and have silicon grips for quickly attaching/detaching without any tools',
+            price: "$45",
+            images: ["Blichmann_1.jpg", "Blichmann_2.jpg", "Blichmann_3.jpg", "Blichmann_4.jpg"]
+        },
+        {
+            title: "CO<sub>2</sub> Tanks",
+            description: "Aluminum tanks, empty",
+            price: "$40 (5 lb)<br/>$60 (10 lb)",
+            images: ["CO2Tanks_1.jpg", "CO2Tanks_2.jpg"]
+        },
+        {
+            title: "Perlick Beer Taps",
+            description: 'Beautiful stainless steel Perlick 525SS beer faucets, with 5 1/8" shanks and handles',
+            price: "$50 each",
+            images: ["Taps_1.jpg", "Taps_2.jpg", "Taps_3.jpg", "Taps_4.jpg", "Taps_5.jpg"]
+        },
+        {
+            title: "Stainless Drip Tray",
+            description: "Kegerator drip tray, stainless, 19\" x 4\"",
+            price: "$25",
+            images: ["DripTray_1.jpg", "DripTray_2.jpg"]
+        },
+        {
+            title: "CO<sub>2</sub> Keg Flushing System",
+            description: "CO2 regulator, curly hose, and quick disconnects that attach to keg or air gun for flushing oxygen out of kegs",
+            price: "$25",
+            images: ["AirGun_1.jpg", "AirGun_2.jpg"]
+        },
+        {
+            title: "Swing-Top Bottles",
+            description: "Grolsch style, flip-top glass bottles",
+            price: "$5",
+            images: ["FlipTop.jpg"]
+        },
+        {
+            title: "Bombers",
+            description: "22 oz brown glass bottles",
+            price: "$5",
+            images: ["Bombers.jpg"]
+        },
+        {
+            title: "Bottles",
+            description: "Two dozen 12 oz brown glass bottles",
+            price: "$5",
+            images: ["Bottles.jpg"]
+        },
+        {
+            title: "Jet Bottle Washer",
+            description: "Attaches to faucet for quickly cleaning bottles or carboys, made of brass",
+            price: "$5",
+            images: ["BottleWasher.jpg"]
+        },
+        {
+            title: "Airlocks",
+            description: "A handful of bubbler airlocks with accompanying caps",
+            price: "$5",
+            images: ["Airlocks.jpg"]
+        },
+        {
+            title: "Stainless Brew Kettle",
+            description: "Comes with lid, ball valve, and large spoon, holds about 4 gallons",
+            price: "$25",
+            images: ["BrewPot_1.jpg", "BrewPot_2.jpg"]
+        },
+        {
+            title: "Bottle Capper",
+            description: "Emily hand capper, fillers, and some caps",
+            price: "$5",
+            images: ["Caps.jpg"]
+        },
+        {
+            title: "False Bottom",
+            description: 'Aluminum perforated false bottom for mash tun, 12.5" diameter',
+            price: "$5",
+            images: ["FalseBottom.jpg"]
+        },
+        {
+            title: "Keg Faucets w/ Connectors",
+            description: "Beer pouring faucets with attached hose, barbs, nuts, and ball lock quick disconnects",
+            price: "$20",
+            images: ["FaucetLines.jpg"]
+        },
+        {
+            title: "2000 ml Erlenmeyer Flask",
+            description: "Heat and crack resistant Bomex (borosilicate) glass -- great for yeast starters",
+            price: "$15",
+            images: ["Flask.jpg"]
+        },
+        {
+            title: "Bevlex Beer Hose",
+            description: "Brand new thick-walled Bevlex 200 clear PVC tubing for carrying beer from your kegs to your taps (~50 feet, 3/16\" ID x 7/16\" OD) -- plus a couple lines with attached barbs and nuts",
+            price: "$15",
+            images: ["Bevlex_1.jpg", "Bevlex_2.jpg", "Bevlex_3.jpg"]
+        },
+        {
+            title: "CO<sub>2</sub> Gas Hose",
+            description: "High-quality, thick-walled red gas hose for CO2 (~28 feet, 5/16\" ID x 9/16\" OD)",
+            price: "$10",
+            images: ["GasHose_1.jpg", "GasHose_2.jpg"]
+        },
+        {
+            title: "Clear Tubing",
+            description: "PVC beverage hose for transferring wort or fermented beer -- fits racking canes and bottle fillers and such",
+            price: "$5",
+            images: ["Hose_1.jpg", "Hose_2.jpg"]
+        },
+        {
             title: "Brew Your Own Magazines",
             description: "Over 50 'Brew Your Own' magazines for your reading enjoyment",
             price: "$5",
-            images: ["Mags_1.jpg","Mags_2.jpg"]
+            images: ["Mags_1.jpg", "Mags_2.jpg"]
+        },
+        {
+            title: "CO<sub>2</sub> Distributor",
+            description: "Manifold for distributing CO2 to kegs, with 4 ball valves, gas hose, and ball lock quick disconnects",
+            price: "$40",
+            images: ["Manifold_1.jpg", "Manifold_2.jpg", "Manifold_3.jpg"]
+        },
+        {
+            title: "Mash Tun",
+            description: 'Insulated cooler for all-grain mash, 10 gallons, with 1/2" stainless ball valve',
+            price: "$40",
+            images: ["Mash_1.jpg", "Mash_2.jpg", "Mash_3.jpg"]
         },
         {
             title: "Corny Keg CO<sub>2</sub> Charger",
@@ -263,11 +323,71 @@
             images: ["MiniCO2Charger_1.jpg", "MiniCO2Charger_2.jpg"]
         },
         {
-            title: "",
-            description: "",
-            price: "$",
-            images: [".jpg"]
+            title: "Mash/Brew Paddle",
+            description: 'Stainless steel paddle for mixing grains and stirring the brew kettle, 42" long',
+            price: "$15",
+            images: ["Paddle_1.jpg", "Paddle_2.jpg"]
         },
+        {
+            title: "Carboy Power Washer",
+            description: 'Copper fabricated "power washer" for cleaning fermenters, with quick connect for attaching to garden hose',
+            price: "$5",
+            images: ["PowerWasher.jpg"]
+        },
+        {
+            title: "Racking Cane",
+            description: 'Stainless steel racking cane, 27" long',
+            price: "$10",
+            images: ["RackingCane.jpg"]
+        },
+        {
+            title: "CO<sub>2</sub> Regulator",
+            description: "Dual guage regulator for CO2 tank, with ball valve",
+            price: "$25",
+            images: ["Regulator_1.jpg", "Regulator_2.jpg", "Regulator_3.jpg", "Regulator_4.jpg"]
+        },
+        {
+            title: "1/2 BBL Sanke Keg",
+            description: "Stainless steel, 15.5 gallons, good condition, ready to be converted to a brewing vessel",
+            price: "$50",
+            images: ["Sanke_1.jpg", "Sanke_2.jpg"]
+        },
+        {
+            title: "Scale",
+            description: "Small 5 lb postal scale -- handy for weighing specialty grains",
+            price: "$5",
+            images: ["Scale.jpg"]
+        },
+        {
+            title: "Mash Sprinkler",
+            description: 'Rotating brass sprinkler for mash recirculation',
+            price: "$5",
+            images: ["Sprinkler.jpg"]
+        },
+        {
+            title: "Carboy Caps",
+            description: "Various caps and stoppers for fermenters",
+            price: "$5",
+            images: ["Stoppers.jpg"]
+        },
+        {
+            title: "Various Keg Parts",
+            description: "Miscellaneous fittings and kegging-related parts",
+            price: "$5",
+            images: ["KegParts.jpg"]
+        },
+        {
+            title: "Various Tools",
+            description: 'Triple scale hydrometer, candy thermometer, fermentation "thief" sampler, oxygen/CO2 diffuser stone, magnetic stir bar, and brand new 200 ml graduated cylinder',
+            price: "$15",
+            images: ["Tools.jpg"]
+        },
+        {
+            title: "Various Transfer Parts",
+            description: "Inline thermometer, air filter, wort aerator, and other miscellaneous parts for transferring and beer",
+            price: "$5",
+            images: ["Transfer.jpg"]
+        }
     ];
 
     // Build items dynamically
