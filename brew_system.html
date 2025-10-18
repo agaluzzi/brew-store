@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homebrewing Equipment for Sale</title>
+    <title>Semi-Automated All-Grain Brew System</title>
     <style>
         body {
             font-family: system-ui, sans-serif;
@@ -143,22 +143,46 @@
         .arrow.right {
             right: 30px;
         }
+
+        #banner img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 58%;
+        }
+
+       
+        
+        #price{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 58%;
+            text-align: center;
+            font-size: 3em;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🍺 Homebrewing Equipment For Sale!</h1>
+    <h1>🌾 All-Grain Semi-Automated Brewing System!</h1>
     <p>Contact: <a href="mailto:aaron.brewmaster@gmail.com" style="color:#93c5fd;">aaron.brewmaster@gmail.com</a> |
         Phone: <a href="tel:+13039608173" style="color:#93c5fd;">(303) 960-8173</a></p>
+    <div id="price">$900</div>
 </header>
+
+<div id="banner">
+    <img src="images/System_Main.jpg" alt="Beautiful stainless single-tier brewing system">
+</div>
 
 <main id="items-container">
     <!-- Items will be injected here -->
 </main>
 
 <footer>
-    &copy; 2025 Homebrewing Equipment Sale – Happy Brewing!
+    &copy; 2025 Happy Brewing!
 </footer>
 
 <!-- Modal -->
@@ -173,101 +197,42 @@
     // Data for all items
     const items = [
         {
-            title: "CO<sub>2</sub> Keg Flushing System",
-            description: "CO2 regulator, curly hose, and quick connects that attach to keg or air gun for flushing oxygen out of kegs",
-            price: "$25",
-            images: ["AirGun_1.jpg", "AirGun_2.jpg"]
+            title: "Single-Tier Stand",
+            description: "Comfortable single-tier layout, easy access to vessels, designed to hold hot liquor tank, mash tun, and boil kettle",
+            price: "",
+            images: ["System_FrontTop.jpg", "System_HLT_Top.jpg", "System_Right.jpg"]
         },
         {
-            title: "Airlocks",
-            description: "A handful of bubbler airlocks with accompanying caps",
-            price: "$5",
-            images: ["Airlocks.jpg"]
+            title: "Heavy Duty Stainless Steel",
+            description: "Built like a tank, fabricated with beautiful stainless steel, amazingly smooth welds, will not rust",
+            price: "",
+            images: ["System_FarRight.jpg", "System_Front.jpg", "System_Left.jpg"]
         },
         {
-            title: "Bevlex Beer Hose",
-            description: "Brand new Bevlex 200 clear PVC tubing for carrying beer from your kegs to your taps (about 50 feet) -- plus a couple lines with attached barbs and nuts",
-            price: "$15",
-            images: ["Bevlex_1.jpg", "Bevlex_2.jpg", "Bevlex_3.jpg"]
-        },
-        {
-            title: "Bottle Washer",
-            description: "Attaches to faucet for quickly cleaning bottles or carboys, made of brass",
-            price: "?",
-            images: ["BottleWasher.jpg"]
-        },
-        {
-            title: "Stainless Brew Kettle",
-            description: "Comes with lid, ball valve, and large spoon, holds about 4 gallons",
-            price: "?",
-            images: ["BrewPot_1.jpg", "BrewPot_2.jpg"]
-        },
-        {
-            title: "PET Plastic Carboys",
-            description: "Stop messing around with heavy, breakable glass! These lightweight fermentors are awesome. (two 6 gallon, one 5 gallon)",
-            price: "$15 each",
-            images: ["Carboys_1.jpg", "Carboys_2.jpg"]
-        },
-        {
-            title: "Counterflow Wort Chiller",
-            description: "Quickly cools down wort on its way to the fermentor. Hot wort travels through inner copper tube, while cold water passes in the other direction.",
-            price: "$50",
-            images: ["Chiller_1.jpg", "Chiller_2.jpg"]
-        },
-        {
-            title: "CO<sub>2</sub> Tanks",
-            description: "Aluminum tanks, empty",
-            price: "$40 (5 lb)<br/>$60 (10 lb)",
-            images: ["CO2Tanks_1.jpg", "CO2Tanks_2.jpg"]
-        },
-        {
-            title: "Keg Faucets w/ Connectors",
-            description: "Beer pouring faucets with attached tubing, barbed threaded fittings, and ball lock quick disconnects",
-            price: "$20",
-            images: ["FaucetLines.jpg"]
-        },
-        {
-            title: "2000 ml Erlenmeyer Flask",
-            description: "Heat resistant Bomex (borosilicate) glass -- great for yeast starters",
-            price: "$15",
-            images: ["Flask.jpg"]
-        },
-        {
-            title: "CO<sub>2</sub> Gas Hose",
-            description: "High-quality, thick-walled red gas hose for CO2 (~28 feet, 5/16\" ID x 9/16\" OD)",
-            price: "$10",
-            images: ["GasHose_1.jpg", "GasHose_2.jpg"]
-        },
-        {
-            title: "Various Keg Parts",
-            description: "Miscellaneous fittings and kegging parts",
-            price: "$5",
-            images: ["KegParts.jpg"]
-        },
-        {
-            title: "5 Gallon Cornelius Kegs",
-            description: "Clean, with ball lock fittings",
-            price: "$35 each",
-            images: ["Kegs_1.jpg", "Kegs_2.jpg", "Kegs_3.jpg"]
-        },
-        {
-            title: "Brew Your Own Magazines",
-            description: "Over 50 'Brew Your Own' magazines for your reading enjoyment",
-            price: "$5",
-            images: ["Mags_1.jpg","Mags_2.jpg"]
-        },
-        {
-            title: "Corny Keg CO<sub>2</sub> Charger",
-            description: "Mini CO2 supply for corny kegs, accepts 16 g CO2 cartridges -- great for taking kegs to a party",
-            price: "$10",
-            images: ["MiniCO2Charger_1.jpg", "MiniCO2Charger_2.jpg"]
-        },
-        {
-            title: "",
+            title: "PID Control Panel",
             description: "",
-            price: "$",
-            images: [".jpg"]
+            price: "",
+            images: ["System_ControlTable2.jpg", "System_ControlTable1.jpg"]
         },
+        {
+            title: "Instant-On Propane Burners",
+            description: "",
+            price: "",
+            images: ["System_BurnerClose.jpg", "System_Burner.jpg", "System_BurnerAssembly.jpg"]
+        },
+        {
+            title: "Automated Temperature Control",
+            description: "",
+            price: "",
+            images: ["System_GasValve.jpg", "System_GasValve2.jpg", "System_KeggleInside.jpg", "System_Spare.jpg"]
+        },
+        {
+            title: "Magnetic-Drive Pumps",
+            description: "",
+            price: "",
+            images: ["System_PumpTop.jpg", "System_PumpValves.jpg", "System_PumpFront.jpg", "System_PumpBottom.jpg", "System_Plugs.jpg"]
+        },
+
     ];
 
     // Build items dynamically
