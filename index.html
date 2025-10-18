@@ -97,7 +97,7 @@
         .modal-content {
             display: block;
             margin: 5vh auto;
-            max-width: 90%;
+            max-width: 80%;
             max-height: 90vh;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -449,6 +449,17 @@
             if (event.key === "ArrowLeft") prevImage();
             if (event.key === "Escape") closeModal();
         }
+    });
+
+    // Preload all images after DOM is ready
+    window.addEventListener("load", () => {
+        const allImages = items.flatMap(item => item.images);
+        allImages.forEach(src => {
+            const img = new Image();
+            img.src = "images/" + src;
+            console.log(`Loaded ${src}`);
+        });
+        console.log(`Preloaded ${allImages.length} images`);
     });
 </script>
 
