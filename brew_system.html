@@ -218,7 +218,7 @@
         },
         {
             title: "Single-Tier Setup",
-            description: "Comfortable single-tier layout allows for easy access without stools or ladders. It's designed to hold a hot liquor tank, mash tun, and boil kettle.",
+            description: "Comfortable single-tier layout allows for easy access without stools or ladders. It comes with two stainless 1/2 BBL kegs converted to kettles.",
             price: "",
             images: ["System_FrontTop.jpg", "System_HLT_Top.jpg", "System_Right.jpg"]
         },
@@ -308,6 +308,16 @@
             if (event.key === "ArrowLeft") prevImage();
             if (event.key === "Escape") closeModal();
         }
+    });
+
+    // Preload all images after DOM is ready
+    window.addEventListener("load", () => {
+        const allImages = items.flatMap(item => item.images);
+        allImages.forEach(src => {
+            const img = new Image();
+            img.src = "images/" + src;
+        });
+        console.log(`Preloaded ${allImages.length} images`);
     });
 </script>
 
