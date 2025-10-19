@@ -148,19 +148,12 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 1em;
             width: 58%;
         }
 
-       
-        
-        #price{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 58%;
-            text-align: center;
-            font-size: 3em;
-            margin-top: 20px;
+        p {
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -168,13 +161,34 @@
 
 <header>
     <h1>🌾 All-Grain Semi-Automated Brewing System!</h1>
-    <p>Contact: <a href="mailto:aaron.brewmaster@gmail.com" style="color:#93c5fd;">aaron.brewmaster@gmail.com</a> |
-        Phone: <a href="tel:+13039608173" style="color:#93c5fd;">(303) 960-8173</a></p>
-    <div id="price">$900</div>
+    <p>
+        I'm looking for a loving new home for my custom-built brewing system, which is fabricated from stainless steel and built like a tank.
+    </p>
+    <p>
+        Check out all the features below, and give me a call, TXT, or email with any questions you may have.<br/>
+        I'd love to have you come take a look!
+    </p>
+    <p>
+        Phone: <a href="tel:+13039608173" style="color:#93c5fd;">(303) 960-8173</a> |
+        Email: <a href="mailto:aaron.brewmaster@gmail.com" style="color:#93c5fd;">aaron.brewmaster@gmail.com</a>
+    </p>
+    <br/>
+    <p>
+        Also, please go check out my other <a href="index.html" style="color:#93c5fd;">equipment for sale</a> too!
+    </p>
 </header>
 
+<div style="text-align: center; margin-top: 1em;">
+    <div style="font-variant: small-caps;">Asking Price</div>
+    <div style="font-size: 2em;">$1000</div>
+</div>
+
 <div id="banner">
-    <img src="images/System_Main.jpg" alt="Beautiful stainless single-tier brewing system">
+    <img src="images/System_Main.jpg" alt="Beautiful stainless single-tier brewing system" class="item">
+</div>
+
+<div style="text-align: center; margin: 20px 0 10px 0">
+    Click on the items below to see more photos!<br/>
 </div>
 
 <main id="items-container">
@@ -197,38 +211,38 @@
     // Data for all items
     const items = [
         {
-            title: "Single-Tier Stand",
-            description: "Comfortable single-tier layout, easy access to vessels, designed to hold hot liquor tank, mash tun, and boil kettle",
-            price: "",
-            images: ["System_FrontTop.jpg", "System_HLT_Top.jpg", "System_Right.jpg"]
-        },
-        {
-            title: "Heavy Duty Stainless Steel",
-            description: "Built like a tank, fabricated with beautiful stainless steel, amazingly smooth welds, will not rust",
+            title: "Stainless Steel Brew Stand",
+            description: "Fabricated from 1.5\" stainless steel square tube, which is beautifully-welded, indestructible, and will not rust.",
             price: "",
             images: ["System_FarRight.jpg", "System_Front.jpg", "System_Left.jpg"]
         },
         {
-            title: "PID Control Panel",
-            description: "",
+            title: "Single-Tier Setup",
+            description: "Comfortable single-tier layout allows for easy access without stools or ladders. It's designed to hold a hot liquor tank, mash tun, and boil kettle.",
+            price: "",
+            images: ["System_FrontTop.jpg", "System_HLT_Top.jpg", "System_Right.jpg"]
+        },
+        {
+            title: "Control Panel",
+            description: "PID controllers are used display and maintain the current temperature of multiple vessels. Pumps can be turned on and off with toggle switches.",
             price: "",
             images: ["System_ControlTable2.jpg", "System_ControlTable1.jpg"]
         },
         {
             title: "Instant-On Propane Burners",
-            description: "",
+            description: 'Three large "banjo" style propane burners are equipped with pilot lights and ball valves to control output.',
             price: "",
             images: ["System_BurnerClose.jpg", "System_Burner.jpg", "System_BurnerAssembly.jpg"]
         },
         {
             title: "Automated Temperature Control",
-            description: "",
+            description: "Electronic Honeywell valves are used to turn the burners on and off. They can be automatically controlled or manually turned on and off with toggle switches.",
             price: "",
             images: ["System_GasValve.jpg", "System_GasValve2.jpg", "System_KeggleInside.jpg", "System_Spare.jpg"]
         },
         {
             title: "Magnetic-Drive Pumps",
-            description: "",
+            description: "Two March 809 centrifugal magnetic drive pumps are used to move water and wort from one place to another. (maximum flow: 6 GPM, maximum head: 7.1 ft)",
             price: "",
             images: ["System_PumpTop.jpg", "System_PumpValves.jpg", "System_PumpFront.jpg", "System_PumpBottom.jpg", "System_Plugs.jpg"]
         },
