@@ -75,6 +75,21 @@
             margin: 0.5rem 0;
         }
 
+        .sold {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ff0000;
+            margin: 0.5rem 0;
+        }
+        
+        .sold::after{
+            content: ' SOLD!';
+        }
+        
+        .sold span{
+            text-decoration: line-through;
+        }
+
         footer {
             text-align: center;
             font-size: 0.9rem;
@@ -208,7 +223,7 @@
         {
             title: "5 Gallon Cornelius Kegs",
             description: "Clean, with ball lock fittings",
-            price: "$35 each",
+            price: "$35 each (only 2 left!)",
             images: ["Kegs_1.jpg", "Kegs_2.jpg", "Kegs_3.jpg"],
             category: "keg"
         },
@@ -229,7 +244,7 @@
         {
             title: "CO<sub>2</sub> Tanks",
             description: "Aluminum tanks, empty",
-            price: "$40 (5 lb)<br/>$60 (10 lb)",
+            price: "$40 (5 lb)<br/><div class='sold'><span>$60 (10 lb)</span></div>",
             images: ["CO2Tanks_1.jpg", "CO2Tanks_2.jpg"],
             category: "keg"
         },
@@ -294,7 +309,8 @@
             description: "Comes with lid, ball valve, and large spoon, holds about 4 gallons",
             price: "$25",
             images: ["BrewPot_1.jpg", "BrewPot_2.jpg"],
-            category: "brewing"
+            category: "brewing",
+            sold: true
         },
         {
             title: "Bottle Capper",
@@ -333,7 +349,7 @@
         },
         {
             title: "CO<sub>2</sub> Gas Hose",
-            description: "High-quality, thick-walled red gas hose for CO2 (~28 feet, 5/16\" ID x 9/16\" OD)",
+            description: "High-quality, thick-walled red gas hose for CO2 (~25 feet, 5/16\" ID x 9/16\" OD)",
             price: "$10",
             images: ["GasHose_1.jpg", "GasHose_2.jpg"],
             category: "keg"
@@ -364,7 +380,8 @@
             description: "Mini CO2 supply for corny kegs, accepts 16 g CO2 cartridges -- great for taking kegs to a party",
             price: "$10",
             images: ["MiniCO2Charger_1.jpg", "MiniCO2Charger_2.jpg"],
-            category: "keg"
+            category: "keg",
+            sold: true
         },
         {
             title: "Mash/Brew Paddle",
@@ -392,7 +409,8 @@
             description: "Dual guage regulator for CO2 tank, with ball valve",
             price: "$25",
             images: ["Regulator_1.jpg", "Regulator_2.jpg", "Regulator_3.jpg", "Regulator_4.jpg"],
-            category: "keg"
+            category: "keg",
+            sold: true
         },
         {
             title: "1/2 BBL Sanke Keg",
@@ -465,7 +483,7 @@
         <div class="item-content">
           <h2>${item.title}</h2>
           <p>${item.description}</p>
-          <p class="price">${item.price}</p>
+          <p class="${item.sold ? 'sold' : 'price'}"><span>${item.price}</span></p>
         </div>`;
         container.appendChild(div);
     });
