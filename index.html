@@ -254,8 +254,8 @@
         },
         {
             title: "Perlick Beer Taps",
-            description: 'Beautiful stainless steel Perlick 525SS beer faucets, with 5 1/8" shanks and handles (3 left)',
-            price: "$50 each",
+            description: 'Beautiful stainless steel Perlick 525SS beer faucets, with 5 1/8" shanks and handles',
+            price: "$40 each (3 left)",
             images: ["Taps_1.jpg", "Taps_2.jpg", "Taps_3.jpg", "Taps_4.jpg", "Taps_5.jpg"],
             category: "keg"
         },
@@ -278,7 +278,7 @@
         {
             title: "Jet Bottle Washer",
             description: "Attaches to faucet for quickly cleaning bottles or carboys, made of brass",
-            price: "$5",
+            price: "$10",
             images: ["BottleWasher.jpg"],
             category: "bottling"
         },
@@ -323,8 +323,8 @@
         },
         {
             title: "Bottle Capper",
-            description: "Emily hand capper, fillers, and some caps",
-            price: "$5",
+            description: "Emily hand capper, fillers, and some bottle caps",
+            price: "$10",
             images: ["Caps.jpg"],
             category: "bottling"
         },
@@ -473,27 +473,31 @@
             description: 'Thermometer, fermentation "thief" sampler, oxygen/CO2 diffuser stone, and magnetic stir bar (hydrometer and graduated cylinder are sold)',
             price: "$10",
             images: ["Tools.jpg"],
-            category: "brewing"
+            category: "misc"
         },
         {
             title: "Various Transfer Parts",
             description: "Inline thermometer, air filter, wort aerator, and other miscellaneous parts for transferring and beer",
             price: "$5",
             images: ["Transfer.jpg"],
-            category: "brewing"
+            category: "misc"
         },
         {
             title: "Brew Your Own Magazines",
             description: "Over 50 'Brew Your Own' magazines for your reading enjoyment",
             price: "$5",
             images: ["Mags_1.jpg", "Mags_2.jpg"],
-            category: "brewing"
+            category: "misc"
         }
     ];
 
     // Build items dynamically
-    const categories = ['brewing', 'keg', 'bottling'];
-    items.sort((a, b) => categories.indexOf(a.category) - categories.indexOf(b.category));
+    const categories = ['brewing', 'keg', 'bottling', 'misc'];
+    items.sort((a, b) => {
+        let aVal = a.sold ? 999 : categories.indexOf(a.category);
+        let bVal = b.sold ? 999 : categories.indexOf(b.category);
+        return aVal - bVal;
+    });
     const container = document.getElementById("items-container");
     items.forEach((item, index) => {
         const div = document.createElement("div");
