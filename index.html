@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homebrewing Equipment for Sale</title>
+    <title>Semi-Automated All-Grain Brew System</title>
     <style>
         body {
             font-family: system-ui, sans-serif;
@@ -33,8 +33,8 @@
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
         }
 
@@ -45,6 +45,10 @@
             overflow: hidden;
             transition: transform 0.2s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 260px;
         }
 
         .item:hover {
@@ -52,42 +56,42 @@
         }
 
         .item img {
-            width: 100%;
-            height: 220px;
+            width: 360px;
+            height: 360px;
+            flex-shrink: 0;
             object-fit: cover;
             display: block;
         }
 
         .item-content {
-            padding: 1rem;
+            padding: 1.25rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .item h2 {
             margin-top: 0;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #1e3a8a;
         }
 
-        .price {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #15803d;
-            margin: 0.5rem 0;
+        .item-content p {
+            font-size: 1.05rem;
+            line-height: 1.55;
         }
 
-        .sold {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #ff0000;
-            margin: 0.5rem 0;
-        }
+        /* Stack the photo above the details on narrow screens */
+        @media (max-width: 640px) {
+            .item {
+                flex-direction: column;
+                min-height: 0;
+            }
 
-        .sold::after {
-            content: ' SOLD!';
-        }
-
-        .sold span {
-            text-decoration: line-through;
+            .item img {
+                width: 100%;
+                height: 220px;
+            }
         }
 
         footer {
@@ -112,7 +116,7 @@
         .modal-content {
             display: block;
             margin: 5vh auto;
-            max-width: 80%;
+            max-width: 90%;
             max-height: 90vh;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -159,21 +163,38 @@
             right: 30px;
         }
 
+        #banner img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            width: 58%;
+            border-radius: 12px;
+        }
+
         p {
             padding-top: 10px;
+        }
+
+        .retail {
+            font-style: italic;
+        }
+
+        .retail::before {
+            content: "Retail value: ";
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🍺 Homebrewing Equipment For Sale!</h1>
+    <h1>🔥 Semi-Automated All-Grain Homebrew System! 🔥</h1>
+    <h1>$750</h1>
     <p>
-        I'm selling <b>ALL</b> of my homebrew equipment that I've collected and built over the course of more than a decade.<br/>
-        Hopefully you can find at least a few things to add to your own brewhouse.
+        Check out all the features below!
     </p>
     <p>
-        Send me a TXT or an email with a list of things you're interested in, and then we'll find a time for you to come by.
+        Give me a call, TXT, or email with any questions you may have. I'd love to have you come take a look!
     </p>
     <p>
         Phone: <a href="tel:+13039608173" style="color:#93c5fd;">(303) 960-8173</a> |
@@ -181,25 +202,151 @@
     </p>
 </header>
 
-<div style="text-align: center; margin: 10px;">
-    Click on the items below to see more photos!<br/>
+<div id="banner" style="text-align: center;">
+    <img src="images/System_Main.jpg" alt="Beautiful stainless single-tier brewing system">
+</div>
+
+<div style="text-align: center; margin: 20px 0 10px 0; font-weight: bold; font-style: italic; font-size: larger;">
+    Click an any item to see more photos!<br/>
 </div>
 
 <main id="items-container">
-    <div class="item" onclick="window.location ='brew_system.html'">
-        <img src="images/System_Main.jpg" alt="Beautiful stainless 1/2 BBL brew system"/>
+
+    <!--
+        Each item is plain HTML now, so you can put rich content in the description
+        (multiple paragraphs, <ul> lists, <b>/<em>, links, etc.).
+        The gallery reads the item's photos from the data-images attribute
+        (comma-separated filenames in images/); the first one is shown on the card.
+    -->
+
+    <div class="item" data-images="System_Left.jpg, System_Front.jpg, System_FarRight.jpg">
+        <img src="images/System_Left.jpg" alt="Stainless Steel, Single-Tier Brew Stand">
         <div class="item-content">
-            <h2>Semi-Automated All-Grain Brewing System</h2>
-            <p>Stainless steel single-tier brew stand, equipped with automated propane burners, pumps, and temperature controllers</p>
-            <p class="price">Click here to learn more!</p>
+            <h2>Stainless Steel Brew Stand</h2>
+            This heavy-duty stainless steel brewing stand is beautifully welded, virtually indestructible, and will never rust!
+            <ul>
+                <li>Fabricated from 304 stainless steel - 1.5" square tube</li>
+                <li>Designed to comfortably hold three full 1/2 BBL vessels (or larger)</li>
+                <li>Can easily accommodate rolling casters</li>
+                <li>Dimensions: 79" L x 21" W x 23" H</li>
+            </ul>
+            <div class="retail">$900 - $1500 or more (w/ materials and labor)</div>
         </div>
     </div>
 
-    <!-- Items will be injected here -->
+    <div class="item" data-images="System_FrontTop.jpg, System_HLT_Top.jpg, System_Right.jpg, Mash_3.jpg">
+        <img src="images/System_FrontTop.jpg" alt="Single-Tier Setup">
+        <div class="item-content">
+            <h2>Single-Tier, Low-Profile Setup</h2>
+            <p>A comfortable layout allows for easy access and visibility into your brew process without stools or ladders. No lifting or carrying
+                hot vessels is required!</p>
+            Includes:
+            <ul>
+                <li>Two stainless <a href="https://byo.com/projects/build-a-keggle-projects/" class="ext">1/2 BBL "keggles"</a> (kegs converted to
+                    kettles)
+                </li>
+                <li>Insulated <a href="https://www.homedepot.com/p/The-Home-Depot-10-Gal-Orange-Water-Cooler-FG1610HDORAN/202260809" class="ext">10
+                    gallon mash tun</a> with mesh filter screen
+                </li>
+                <li>1/2" ball valves (<a href="https://morebeer.com/products/stainless-ball-valve-12-full-port" class="ext">stainless</a>, brass)</li>
+            </ul>
+            <div class="retail">$175</div>
+        </div>
+    </div>
+
+    <div class="item" data-images="System_BurnerClose.jpg, System_Burner.jpg, System_BurnerAssembly.jpg">
+        <img src="images/System_BurnerClose.jpg" alt="Instant-On Propane Burners">
+        <div class="item-content">
+            <h2>Instant-On Propane Burners</h2>
+            <p>Large "banjo" style burners are equipped with pilot lights and instantly turned on/off via the control panel.</p>
+            <ul>
+                <li>Three <a href="https://morebeer.com/products/banjo-burner-high-pressure-propane" class="ext">High-Pressure Propane Banjo Burners</a></li>
+                <li>
+                    <a href="https://www.amazon.com/Thermopile-Assembly-Aluminum-Controls-Replacement/dp/B0D498KN5S/ref=sr_1_1?crid=2V5R2REDO84J2&dib=eyJ2IjoiMSJ9.Vln9fWnYJt1uEHp4H_JyITGp4InQ0gJUwEwO6aY42iozJ79fRiWdS5RmhPWQ-EHhOl1QbHOHrjfohMncmQZMFLz7BrAfotsum9Coh6HSaSaKOcwkpOZuf0w9WpCAuDOKEGzEJ-gEXu9PK0ws_eieXYH7rzmlBvfnxkJGbS5Jk3vTpKvJVmdEykJxJ9mH7YZ3YnR1fCmLf5nomLyGYisDr0rKzuKqo-ry9gGFLA1QNN_4C-qwdEtkbY4B72LISnA40QsvyNDvsFPvoy8EQmyLxljKBOodKs0ImijlEbg1fqs.LxgDrzvhYh4ILTox0R49XpOETZzRuxCquMAkbW8cJ4k&dib_tag=se&keywords=pilot+burner+with+thermopile&qid=1788145335&sprefix=pilot+burner+with+thermopile%2Caps%2C208&sr=8-1"
+                       class="ext">Pilot burners w/ thermopile</a> for easy ignition
+                </li>
+                <li>Small ball valves to control flame intensity</li>
+                <li>Flame shields to contain heat and keep pilot lit</li>
+            </ul>
+            <div class="retail">$340</div>
+        </div>
+    </div>
+
+    <div class="item" data-images="System_GasValve.jpg, System_GasValve2.jpg, System_Spare.jpg">
+        <img src="images/System_GasValve.jpg" alt="Automated Temperature Control">
+        <div class="item-content">
+            <h2>Electronic Gas Valves</h2>
+            <p>Solenoid-operated valves with standing pilot are used to control the propane, turning the burners on and off.</p>
+            <ul>
+                <li>Three <a href="https://www.supplyhouse.com/Resideo-VR8200A2132-1-2-24-Vac-Standing-Pilot-Gas-Valve" class="ext">Honeywell VR8200A 2132</a> ~
+                    24V standing pilot gas valves
+                </li>
+                <li>Switched automatically or manually via the control panel</li>
+            </ul>
+            <div class="retail">$360</div>
+        </div>
+    </div>
+
+    <div class="item" data-images="System_ControlTable2.jpg, System_ControlTable1.jpg, System_KeggleInside.jpg, System_Spare.jpg">
+        <img src="images/System_ControlTable2.jpg" alt="Control Panel">
+        <div class="item-content">
+            <h2>Automated Temperature Control</h2>
+            <p>PID controllers are used to display and maintain the current temperature of each vessel, while the pumps can be turned on and off
+                with the flip of a switch.</p>
+            <ul>
+                <li>Three <a href="https://www.auberins.com/index.php?main_page=product_info&cPath=1&products_id=106"
+                                                     class="ext">Auber Instruments SYL-2362</a> PID temperature controllers
+                </li>
+                <li>Three <a href="https://www.auberins.com/index.php?main_page=product_info&cPath=64_68&products_id=85"
+                                                         class="ext">Auber Instruments PT100 RTD</a> liquid-tight temperature probes
+                </li>
+                <li>Custom enclosure with kill switch and built-in fuse</li>
+            </ul>
+            <div class="retail">$250</div>
+        </div>
+    </div>
+
+    <div class="item" data-images="System_PumpTop.jpg, System_PumpValves.jpg, System_PumpFront.jpg, System_PumpBottom.jpg, System_Plugs.jpg">
+        <img src="images/System_PumpTop.jpg" alt="Magnetic-Drive Pumps">
+        <div class="item-content">
+            <h2>Magnetic-Drive Pumps</h2>
+            <p>Two <a href="https://www.marchpump.com/pump/809-pl-hs-mag-drive-pump" class="ext">March 809 PL-HS</a> centrifugal magnetic
+                drive pumps are used to move hot water and wort from one vessel to another.</p>
+            <ul>
+                <li>Max Liquid Temperature: 250 °F</li>
+                <li>Max Flow: 6 GPM</li>
+                <li>Max Head: 12.1 FT</li>
+            </ul>
+            <div class="retail">$550 (<a href="https://morebeer.com/products/march-815pl-high-temperature-brewing-pump-flow" class="ext">similar
+                model</a>)
+            </div>
+        </div>
+    </div>
+
+    <div class="item" data-images="Blichmann_1.jpg, Blichmann_2.jpg, Blichmann_3.jpg, Blichmann_4.jpg">
+        <img src="images/Blichmann_1.jpg" alt="Blichmann QuickConnectors">
+        <div class="item-content">
+            <h2>Blichmann QuickConnectors + Silicon Hose</h2>
+            <p>Stainless threaded fittings with silicon grips make it easy to quickly attach/detach hoses without any tools.</p>
+            <ul>
+                <li><a href="https://morebeer.com/products/blichmann-stainless-quickconnector-12in-straight-barb" class="ext">Blichmann Quick
+                    Connector - 1/2" Straight Barb</a> (4)
+                </li>
+                <li><a href="https://morebeer.com/products/blichmann-stainless-quickconnector-12in-90-deg-elbow-barb" class="ext">Blichmann Quick
+                    Connector - 1/2" 90 Degree Elbow</a> (2)
+                </li>
+                <li><a href="https://morebeer.com/products/high-temp-silicone-tubing-12?variant=51914456891681" class="ext">High Temp Silicone Tubing
+                    - 1/2"</a> (~20 ft)
+                </li>
+            </ul>
+            <div class="retail">$160</div>
+        </div>
+    </div>
+
 </main>
 
 <footer>
-    &copy; 2025 Happy Brewing!
+    &copy; 2026 Happy Brewing!
 </footer>
 
 <!-- Modal -->
@@ -211,306 +358,15 @@
 </div>
 
 <script>
-    // Data for all items
-    const items = [
-        {
-            title: "PET Plastic Carboys",
-            description: "Stop messing around with heavy, breakable glass! These lightweight fermentors are awesome. (two 6 gallon, one 5 gallon)",
-            price: "$15 each",
-            images: ["Carboys_1.jpg", "Carboys_2.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "5 Gallon Cornelius Kegs",
-            description: "Clean, with ball lock fittings",
-            price: "$35 each",
-            images: ["Kegs_1.jpg", "Kegs_2.jpg", "Kegs_3.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Counterflow Wort Chiller",
-            description: "Quickly cools down wort on its way to the fermentor. Hot wort travels through inner copper tube, while cold water passes in the other direction",
-            price: "$50",
-            images: ["Chiller_1.jpg", "Chiller_2.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Blichmann QuickConnectors + Silicon Hose",
-            description: 'High temp silicon hose with 1/2" Blichmann QuickConnector threaded fittings (4 straight, 2 elbow) -- these are stainless and have silicon grips for quickly attaching/detaching without any tools',
-            price: "$45",
-            images: ["Blichmann_1.jpg", "Blichmann_2.jpg", "Blichmann_3.jpg", "Blichmann_4.jpg"],
-            category: "brewing"
-        },
-        {
-            title: "CO<sub>2</sub> Tanks",
-            description: "Aluminum tanks, empty",
-            price: "$40 (5 lb)<br/>$60 (10 lb)",
-            images: ["CO2Tanks_1.jpg", "CO2Tanks_2.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Perlick Beer Taps",
-            description: 'Beautiful stainless steel Perlick 525SS beer faucets, with 5 1/8" shanks and handles',
-            price: "$40 each (3 left)",
-            images: ["Taps_1.jpg", "Taps_2.jpg", "Taps_3.jpg", "Taps_4.jpg", "Taps_5.jpg"],
-            category: "keg"
-        },
-        {
-            title: "Stainless Drip Tray",
-            description: "Kegerator drip tray, stainless, 19\" x 4\"",
-            price: "$25",
-            images: ["DripTray_1.jpg", "DripTray_2.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "CO<sub>2</sub> Keg Flushing System",
-            description: "CO2 regulator, curly hose, and quick disconnects that attach to keg or air gun for flushing oxygen out of kegs",
-            price: "$35",
-            images: ["AirGun_1.jpg", "AirGun_2.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Jet Bottle Washer",
-            description: "Attaches to faucet for quickly cleaning bottles or carboys, made of brass",
-            price: "$10",
-            images: ["BottleWasher.jpg"],
-            category: "bottling"
-        },
-        {
-            title: "Swing-Top Bottles",
-            description: "Grolsch style, flip-top glass bottles",
-            price: "$5",
-            images: ["FlipTop.jpg"],
-            category: "bottling",
-            sold: true
-        },
-        {
-            title: "Bombers",
-            description: "22 oz brown glass bottles",
-            price: "$5",
-            images: ["Bombers.jpg"],
-            category: "bottling"
-        },
-        {
-            title: "Bottles",
-            description: "Two dozen 12 oz brown glass bottles",
-            price: "$5",
-            images: ["Bottles.jpg"],
-            category: "bottling",
-            sold: true
-        },
-        {
-            title: "Airlocks",
-            description: "A handful of bubbler airlocks with accompanying caps",
-            price: "$5",
-            images: ["Airlocks.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Stainless Brew Kettle",
-            description: "Comes with lid, ball valve, and large spoon, holds about 4 gallons",
-            price: "$25",
-            images: ["BrewPot_1.jpg", "BrewPot_2.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Bottle Capper",
-            description: "Emily hand capper, fillers, and some bottle caps",
-            price: "$10",
-            images: ["Caps.jpg"],
-            category: "bottling"
-        },
-        {
-            title: "False Bottom",
-            description: 'Aluminum perforated false bottom for mash tun, 12.5" diameter',
-            price: "$5",
-            images: ["FalseBottom.jpg"],
-            category: "brewing"
-        },
-        {
-            title: "Keg Faucets w/ Connectors",
-            description: "Beer pouring faucets with attached hose, barbs, nuts, and ball lock quick disconnects",
-            price: "$20",
-            images: ["FaucetLines.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "2000 ml Erlenmeyer Flask",
-            description: "Heat and crack resistant Bomex (borosilicate) glass -- great for yeast starters",
-            price: "$15",
-            images: ["Flask.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Bevlex Beer Hose",
-            description: "Brand new thick-walled Bevlex 200 clear PVC tubing for carrying beer from your kegs to your taps (~50 feet, 3/16\" ID x 7/16\" OD) -- plus a couple lines with attached barbs and nuts",
-            price: "$15",
-            images: ["Bevlex_1.jpg", "Bevlex_2.jpg", "Bevlex_3.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "CO<sub>2</sub> Gas Hose",
-            description: "High-quality, thick-walled red gas hose for CO2 (~25 feet, 5/16\" ID x 9/16\" OD)",
-            price: "$10",
-            images: ["GasHose_1.jpg", "GasHose_2.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Clear Tubing",
-            description: "PVC beverage hose for transferring wort or fermented beer -- fits racking canes and bottle fillers and such",
-            price: "$5",
-            images: ["Hose_1.jpg", "Hose_2.jpg"],
-            category: "brewing"
-        },
-        {
-            title: "CO<sub>2</sub> Distributor",
-            description: "Manifold for distributing CO2 to kegs, with 4 ball valves, gas hose, and ball lock quick disconnects",
-            price: "$40",
-            images: ["Manifold_1.jpg", "Manifold_2.jpg", "Manifold_3.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Mash Tun",
-            description: 'Insulated cooler for all-grain mash, 10 gallons, with 1/2" stainless ball valve',
-            price: "$40",
-            images: ["Mash_1.jpg", "Mash_2.jpg", "Mash_3.jpg"],
-            category: "brewing"
-        },
-        {
-            title: "Corny Keg CO<sub>2</sub> Charger",
-            description: "Mini CO2 supply for corny kegs, accepts 16 g CO2 cartridges -- great for taking kegs to a party",
-            price: "$10",
-            images: ["MiniCO2Charger_1.jpg", "MiniCO2Charger_2.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Mash/Brew Paddle",
-            description: 'Stainless steel paddle for mixing grains and stirring the brew kettle, 42" long',
-            price: "$15",
-            images: ["Paddle_1.jpg", "Paddle_2.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Carboy Power Washer",
-            description: 'Copper fabricated "power washer" for cleaning fermenters, with quick connect for attaching to garden hose',
-            price: "$5",
-            images: ["PowerWasher.jpg"],
-            category: "brewing"
-        },
-        {
-            title: "Racking Cane",
-            description: 'Stainless steel racking cane, 27" long',
-            price: "$10",
-            images: ["RackingCane.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "CO<sub>2</sub> Regulator",
-            description: "Dual guage regulator for CO2 tank, with ball valve",
-            price: "$25",
-            images: ["Regulator_1.jpg", "Regulator_2.jpg", "Regulator_3.jpg", "Regulator_4.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "1/2 BBL Sanke Keg",
-            description: "Stainless steel, 15.5 gallons, good condition, ready to be converted to a brewing vessel",
-            price: "$50",
-            images: ["Sanke_1.jpg", "Sanke_2.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Scale",
-            description: "Small 5 lb postal scale -- handy for weighing specialty grains",
-            price: "$5",
-            images: ["Scale.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Mash Sprinkler",
-            description: 'Rotating brass sprinkler for mash recirculation',
-            price: "$5",
-            images: ["Sprinkler.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Carboy Caps",
-            description: "Various caps and stoppers for fermenters",
-            price: "$5",
-            images: ["Stoppers.jpg"],
-            category: "brewing",
-            sold: true
-        },
-        {
-            title: "Various Keg Parts",
-            description: "Miscellaneous fittings and kegging-related parts",
-            price: "$5",
-            images: ["KegParts.jpg"],
-            category: "keg",
-            sold: true
-        },
-        {
-            title: "Various Tools",
-            description: 'Thermometer, fermentation "thief" sampler, oxygen/CO2 diffuser stone, and magnetic stir bar (hydrometer and graduated cylinder are sold)',
-            price: "$10",
-            images: ["Tools.jpg"],
-            category: "misc"
-        },
-        {
-            title: "Various Transfer Parts",
-            description: "Inline thermometer, air filter, wort aerator, and other miscellaneous parts for transferring and beer",
-            price: "$5",
-            images: ["Transfer.jpg"],
-            category: "misc"
-        },
-        {
-            title: "Brew Your Own Magazines",
-            description: "Over 50 'Brew Your Own' magazines for your reading enjoyment",
-            price: "$5",
-            images: ["Mags_1.jpg", "Mags_2.jpg"],
-            category: "misc"
-        }
-    ];
+    // Collect each item's photo list from its data-images attribute.
+    const itemEls = Array.from(document.querySelectorAll("#items-container .item"));
+    const imageSets = itemEls.map(el =>
+        el.dataset.images.split(",").map(s => s.trim()).filter(Boolean)
+    );
 
-    // Build items dynamically
-    const categories = ['brewing', 'keg', 'bottling', 'misc'];
-    items.sort((a, b) => {
-        let aVal = a.sold ? 999 : categories.indexOf(a.category);
-        let bVal = b.sold ? 999 : categories.indexOf(b.category);
-        return aVal - bVal;
-    });
-    const container = document.getElementById("items-container");
-    items.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.className = "item";
-        div.onclick = () => openGallery(index);
-        div.innerHTML = `
-        <img src="images/${item.images[0]}" alt="${item.title}">
-        <div class="item-content">
-          <h2>${item.title}</h2>
-          <p>${item.description}</p>
-          <p class="${item.sold ? 'sold' : 'price'}"><span>${item.price}</span></p>
-        </div>`;
-        container.appendChild(div);
+    // Clicking an item opens its photo gallery.
+    itemEls.forEach((el, index) => {
+        el.addEventListener("click", () => openGallery(index));
     });
 
     // Modal logic
@@ -518,7 +374,7 @@
     let currentIndex = 0;
 
     function openGallery(index) {
-        currentSet = items[index].images;
+        currentSet = imageSets[index];
         currentIndex = 0;
         showImage();
         document.getElementById("imageModal").style.display = "block";
@@ -560,12 +416,21 @@
 
     // Preload all images after DOM is ready
     window.addEventListener("load", () => {
-        const allImages = items.flatMap(item => item.images);
+        const allImages = imageSets.flat();
         allImages.forEach(src => {
             const img = new Image();
             img.src = "images/" + src;
         });
         console.log(`Preloaded ${allImages.length} images`);
+    });
+
+    // Set up external links
+    const links = document.querySelectorAll('.ext');
+    links.forEach(link => {
+        link.target = '_blank';
+        link.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
     });
 </script>
 
